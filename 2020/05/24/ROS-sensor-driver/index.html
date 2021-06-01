@@ -228,3 +228,36 @@ if (navigator.mediaDevices.getUserMedia) {
 <p>Even the sensor driver can be locally on PC, does not mean it can run on phone<br>for phone to connect…</p>
 <p>Need to override the check_origin() function in tornado.websocket,<br>it is a bullshit security function that prevent other source blah blah blah…<br>which cause other device cannot connect</p>
 <p>Goto /usr/local/lib/python2.7/dist-packages/tornado<br>Find the file websocket.py  and override the function check_origin() to always return True</p>
+<hr>
+<p>APP METHOD!</p>
+<p>andriod extra:<br>git clone <a href="https://github.com/rosjava/android_extras" target="_blank" rel="noopener">https://github.com/rosjava/android_extras</a></p>
+<p>download android_studio<br><a href="https://stackoverflow.com/questions/34556884/how-to-install-android-sdk-on-ubuntu" target="_blank" rel="noopener">https://stackoverflow.com/questions/34556884/how-to-install-android-sdk-on-ubuntu</a></p>
+<p>android_studio =&gt; title screen =&gt; manage sdk  =&gt; apply =&gt; ok/done</p>
+<p>goto ~/.bashrc add export ANDROID_HOME=/home/$USER/Android/Sdk</p>
+<p>goto andriod_extra =&gt; ./gradlew assembleRelease  (see build.gradle to see what task is available)</p>
+<p>during ./gradlew assembleRelease BUG will happen:</p>
+<p>‘’’</p>
+<blockquote>
+<p>Task :cv_bridge:verifyReleaseResources FAILED</p>
+</blockquote>
+<p>FAILURE: Build failed with an exception.</p>
+<ul>
+<li>What went wrong:<br>Execution failed for task ‘:cv_bridge:verifyReleaseResources’.<blockquote>
+<p>java.util.concurrent.ExecutionException: com.android.builder.internal.aapt.v2.Aapt2Exception: Android resource linking failed<br>Output:  /home/sam/proj/robot_software/andriod/src/android_extras/cv_bridge/build/intermediates/aapt_friendly_merged_manifests/release/processReleaseManifest/aapt/AndroidManifest.xml:2: error: attribute ‘package’ in <manifest> tag is not a valid Android package name: ‘cv_bridge’.<br>‘’’</manifest></p>
+</blockquote>
+</li>
+</ul>
+<p>Solution:<br><a href="https://github.com/rosjava/android_core/issues/303#issuecomment-488436619" target="_blank" rel="noopener">https://github.com/rosjava/android_core/issues/303#issuecomment-488436619</a></p>
+<p>I modified android_extras/cv_bridge/src/AndroidManifest.xml, replaced package=”cv_bridge” to package=”com.github.rosjava.android_extras.cv_bridge”. The problem is gone.</p>
+<p>In android_extra build.gradle</p>
+<p>Comment this:<br>task wrapper(type: Wrapper) {<br>  gradleVersion = “4.10.2”<br>}</p>
+<p>Add this instead:</p>
+<p>// Configuring the wrapper, the new way (since Gradle 4.8)<br>// see <a href="https://docs.gradle.org/current/userguide/gradle_wrapper.html#customizing_wrapper" target="_blank" rel="noopener">https://docs.gradle.org/current/userguide/gradle_wrapper.html#customizing_wrapper</a><br>wrapper{<br>    gradleVersion = ‘4.10.2’<br>}</p>
+<p>in the same build.gradle</p>
+<p>change to compileSdkVersion = 28   (add =)</p>
+<p>In MainActivity.java, after ActivityCompat.requestPermissions(this, PERMISSIONS, 0); add this</p>
+<pre><code>//important permission  //added by Sam
+ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+
+ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.CAMERA}, 1);
+</code></pre>

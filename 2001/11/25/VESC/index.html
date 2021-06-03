@@ -6,7 +6,7 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
     <!--Description-->
     
@@ -34,18 +34,14 @@
     <title>VESC - Sam&#39;s Memory Buffer</title>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="../../../../sass/main.css">
+    <link rel="stylesheet" href="../../../../css/reset.css">
+    <link rel="stylesheet" href="../../../../css/main.css">
 
-    <!--[if lt IE 8]>
-        <script src="../../../../js/ie/html5shiv.js"></script>
-    <![endif]-->
-
-    <!--[if lt IE 8]>
-        <link rel="stylesheet" href="../../../../sass/ie8.css">
-    <![endif]-->
-
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-        <link rel="stylesheet" href="../../../../sass/ie9.css">
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
     <!-- Gallery -->
@@ -55,70 +51,100 @@
     
 
 
+    <!--Favicon-->
+    
+
 </head>
 
 <body>
 
-    <div id="wrapper">
-
-        <!-- Menu -->
-        <!-- Header -->
-<header id="header">
-    <div class="inner">
-
-        <!-- Logo -->
-        <a href="/" class="logo">
-            <span class="symbol"><img src="/images/icon_robot.png" alt=""></span><span class="title">Sam's Memory Buffer</span>
-        </a>
-
-        <!-- Nav -->
-        <nav>
-            <ul>
-                <li><a href="#menu">Menu</a></li>
-            </ul>
-        </nav>
-
-    </div>
-</header>
-
 <!-- Menu -->
-<nav id="menu">
-    <h2>Menu</h2>
-    <ul>
-        
+<!-- Navigation -->
+<header>
+    <div class="logo">
+        <a href="/">Sam's Memory Buffer</a>
+    </div><!-- end logo -->
+
+    <div id="menu_icon"></div>
+    <nav>
+        <ul>
+            
             <li>
                 <a href="../../../../index.html">Home</a>
             </li>
-        
+            
             <li>
                 <a href="../../../../archives">Archives</a>
             </li>
-        
+            
             <li>
                 <a href="../../../../about">About</a>
             </li>
+            
+        </ul>
+    </nav><!-- end navigation menu -->
+
+    <div class="footer clearfix">
+        <ul class="social clearfix">
+            
+            
+                <li><a href="https://www.facebook.com/" class="fb" target="_blank" data-title="Facebook"></a></li>
+            
+            
+                <li><a href="https://www.behance.net/" class="behance" target="_blank" data-title="Behance"></a></li>
+            
+            
+                <li><a href="https://plus.google.com/+Pixelhint/posts" class="google" target="_blank" data-title="Google+"></a></li>
+            
+            
+                <li><a href="https://dribbble.com/pixelhint" class="dribble" target="_blank" data-title="Dribble"></a></li>
+            
+            
+            
+            
+        </ul><!-- end social -->
+
+        <div class="rights">
+            <p>Copyright © 2014 magnetic.</p>
+            <p>Template by <a href="http://pixelhint.com/magnetic-free-html5-responsive-photography-website-template/">Pixelhint.com</a></p>
+            <p>Hexo Theme by <a href="http://www.codeblocq.com/">Jonathan K.</a></p>
+        </div><!-- end rights -->
+    </div><!-- end footer -->
+</header><!-- end header -->
+
+
+<!-- Main Content -->
+<section class="main clearfix">
+
+    <section class="top" style="background: url('https://picsum.photos/g/1300/500?random');">
+        <div class="wrapper content_header clearfix">
+            
+
+<div class="work_nav">
+
+    <ul class="btn clearfix">
+        
+        <li><a href="../../../../2002/11/25/Clock/" class="previous" data-title="Clock"></a></li>
+        
+        <li><a href="/" class="grid" data-title="Portfolio"></a></li>
+        
+        <li><a href="../../../../2000/11/25/OpenCV/" class="next" data-title="OpenCV"></a></li>
         
     </ul>
-</nav>
 
+</div><!-- end work_nav -->
+            <h1 class="title">VESC</h1>
+        </div>
+    </section><!-- end top -->
 
-        <div id="main">
-            <div class="inner">
+    <section class="wrapper">
+        <div class="content">
 
-                <!-- Main Content -->
-                
+            <!-- Gallery -->
+            
 
-    <h1>VESC</h1>
-
-
-    <span class="image main"><img src="https://picsum.photos/g/1300/500?random" alt=""></span>
-
-
-<!-- Gallery -->
-
-
-<!-- Content -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <!-- Content -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <div id="hbe-security">
   <div class="hbe-input-container">
   <input type="password" class="hbe-form-control" id="pass" placeholder="=D">
@@ -129,79 +155,36 @@
 <div id="decryptionError" style="display: none;">Incorrect Password!</div>
 <div id="noContentError" style="display: none;">No content to display!</div>
 <div id="encrypt-blog" style="display:none">
-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
+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
 </div>
 <script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
 
-<!-- Tags -->
-
+            <!-- Tags -->
+            
 
 
 <div class="tags">
-    <a href="/tags/https-media-giphy-com-media-3oEduQcyYjxOzlSwtW-giphy-gif/" class="button small">https://media.giphy.com/media/3oEduQcyYjxOzlSwtW/giphy.gif</a>
+    <a href="/tags/https-media-giphy-com-media-3oEduQcyYjxOzlSwtW-giphy-gif/">https://media.giphy.com/media/3oEduQcyYjxOzlSwtW/giphy.gif</a>
 </div>
 
 
 
-<!-- Comments -->
-<div>
-    
-
-
-</div>
-
-
-
-            </div>
-        </div>
-
-        <!-- Footer -->
-<footer id="footer">
-    <div class="inner">
-        <section>
-            <h2>About</h2>
+            <!-- Comments -->
             <div>
-                PlaceHolder
+                
+
+
+
+
             </div>
-        </section>
-        <section>
-            <h2>Follow</h2>
-            <ul class="icons">
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-            </ul>
-        </section>
-        <ul class="copyright">
-            <li>&copy; Untitled. All rights reserved</li>
-            <li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
-            <li>Hexo: <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></li>
-        </ul>
-    </div>
-</footer>
-    </div>
+        </div><!-- end content -->
+    </section>
+</section><!-- end main -->
 
-    <!-- After footer scripts -->
-    
+<!-- After footer scripts -->
+
 <!-- jQuery -->
-<script src="../../../../js/jquery.min.js"></script>
-
-<!-- skel -->
-<script src="../../../../js/skel.min.js"></script>
-
-<!-- Custom Code -->
-<script src="../../../../js/util.js"></script>
-
-<!--[if lte IE 8]>
-<script src="../../../../js/ie/respond.min.js"></script>
-<![endif]-->
+<script src="../../../../js/jquery.js"></script>
 
 <!-- Custom Code -->
 <script src="../../../../js/main.js"></script>
